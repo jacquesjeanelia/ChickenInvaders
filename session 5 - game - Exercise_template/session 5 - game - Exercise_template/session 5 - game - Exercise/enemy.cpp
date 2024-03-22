@@ -5,6 +5,7 @@
 #include <stdlib.h> // rand() -> to generate really large integer
 #include <QTimer>
 #include <QDebug>
+#include "health.h"
 
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
@@ -31,6 +32,7 @@ void Enemy:: move()
     setPos(x(),y()+5);
         if(y()+100>800)
     {
+
         scene()->removeItem(this);
             delete this;
     }

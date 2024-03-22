@@ -1,4 +1,6 @@
+
 #include "bullet.h"
+#include <QGraphicsTextItem>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
@@ -6,7 +8,8 @@
 #include <QList>
 #include <enemy.h>
 #include <player.h>
-Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
+#include <score.h>
+Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
 
         // *******  Setting the bullets' size ********
     //setRect(0,0,10,50);
@@ -19,6 +22,7 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
     timer->start(50);
 }
 
+
 // Move function is used to 1-  move the bullet upwards
                          // 2- Handle the collision of the bullets with enemies
 void Bullet:: move()
@@ -30,6 +34,7 @@ void Bullet:: move()
     {
         if(typeid(*(colliding_items[x])) == typeid(Enemy))
             {
+
                 scene()->removeItem(colliding_items[x]);
                 scene()->removeItem(this);
                 delete colliding_items[x];

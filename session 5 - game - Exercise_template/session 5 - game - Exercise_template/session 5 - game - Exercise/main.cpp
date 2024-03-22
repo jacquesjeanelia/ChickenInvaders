@@ -1,5 +1,6 @@
 #include <QPixmap>
 #include <QApplication>
+#include <QGraphicsTextItem>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
@@ -8,6 +9,9 @@
 #include <QTimer>
 #include <QDebug>
 #include <QBrush>
+#include "score.h"
+#include "health.h""
+
 
 int main(int argc, char *argv[])
 {
@@ -33,6 +37,14 @@ int main(int argc, char *argv[])
     player->setPixmap(QPixmap(":/new/prefix1/ship.png"));
     player->setPos(view->width()/2, view->height()-100);
     scene->addItem(player);
+
+    //creating score
+    Score * score_main = new Score;
+    scene->addItem(score_main);
+    //creating health
+    Health * health_main = new Health;
+    health_main->setPos(health_main->x(), health_main->y()+25);
+    scene->addItem(health_main);
 
     // *******   Assign scene to the view   ***************
 
