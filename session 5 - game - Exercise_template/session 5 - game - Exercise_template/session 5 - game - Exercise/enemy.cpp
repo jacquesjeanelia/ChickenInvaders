@@ -6,7 +6,11 @@
 #include <QTimer>
 #include <QDebug>
 #include "health.h"
+#include <score.h>
+#include "users.h"
+#include "info.h"
 
+extern info *i;
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
 
@@ -34,6 +38,7 @@ void Enemy:: move()
     {
 
         scene()->removeItem(this);
-            delete this;
+        delete this;
+        i->health->decrease();
     }
 }

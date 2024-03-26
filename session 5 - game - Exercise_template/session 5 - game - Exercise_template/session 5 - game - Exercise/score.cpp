@@ -1,7 +1,7 @@
 #include "score.h"
 #include "QFont"
+#include "users.h"
 Score::Score(QGraphicsItem *parent):QGraphicsTextItem(parent){
-    score = 0;
 
     setPlainText  (QString ("score: ") + QString::number(score));
     setDefaultTextColor(Qt::blue);
@@ -12,7 +12,3 @@ void Score::increase(){
     setPlainText  (QString ("score: ") + QString::number(score));
 }
 
-int Score::getScore()
-{
-    return score;
-}

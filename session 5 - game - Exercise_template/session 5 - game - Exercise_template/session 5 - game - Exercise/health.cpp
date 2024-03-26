@@ -1,7 +1,10 @@
-#include "health.h".h"
+#include "health.h"
 #include "QFont"
+#include "main.cpp"
+#include "users.h"
+
+
 Health::Health(QGraphicsItem *parent):QGraphicsTextItem(parent){
-    health = 3;
 
     setPlainText  (QString ("health: ") + QString::number(health));
     setDefaultTextColor(Qt::red);
@@ -12,7 +15,4 @@ void Health::decrease(){
     setPlainText  (QString ("Health: ") + QString::number(health));
 }
 
-int Health::getHealth()
-{
-    return health;
-}
+

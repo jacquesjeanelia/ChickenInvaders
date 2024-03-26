@@ -9,6 +9,12 @@
 #include <enemy.h>
 #include <player.h>
 #include <score.h>
+#include "health.h"
+#include "users.h"
+#include "info.h"
+
+extern info *i;
+
 Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
 
         // *******  Setting the bullets' size ********
@@ -38,6 +44,7 @@ void Bullet:: move()
                 scene()->removeItem(colliding_items[x]);
                 scene()->removeItem(this);
                 delete colliding_items[x];
+                i-> score->increase();
                 delete this;
                 return;
             }

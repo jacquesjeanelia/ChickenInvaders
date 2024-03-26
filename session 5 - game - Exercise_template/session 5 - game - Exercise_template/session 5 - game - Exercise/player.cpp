@@ -6,6 +6,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include "enemy.h"
+#include "users.h"
 Player::Player() {
 
 }
