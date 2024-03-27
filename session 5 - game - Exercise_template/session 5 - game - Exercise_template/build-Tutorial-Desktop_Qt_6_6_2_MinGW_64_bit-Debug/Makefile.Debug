@@ -126,8 +126,9 @@ compiler_rcc_clean:
 debug/qrc_images.cpp: ../session\ 5\ -\ game\ -\ Exercise/images.qrc \
 		C:/Qt/6.6.2/mingw_64/bin/rcc.exe \
 		../session\ 5\ -\ game\ -\ Exercise/red_laser.png \
+		../session\ 5\ -\ game\ -\ Exercise/background.png \
 		../session\ 5\ -\ game\ -\ Exercise/ship.png \
-		../session\ 5\ -\ game\ -\ Exercise/chicken2.png
+		../session\ 5\ -\ game\ -\ Exercise/chicken.png
 	C:\Qt\6.6.2\mingw_64\bin\rcc.exe -name images --no-zstd "..\session 5 - game - Exercise\images.qrc" -o debug\qrc_images.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h

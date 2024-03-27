@@ -21,6 +21,7 @@ info::info() {
     this->setFixedSize(800,600);
 
     QGraphicsScene *scene = new QGraphicsScene();
+    scene->setBackgroundBrush(QPixmap(":/new/prefix1/background.png"));
     scene->setSceneRect(0,0,800,600);
     // *******  Create the Player ********
 

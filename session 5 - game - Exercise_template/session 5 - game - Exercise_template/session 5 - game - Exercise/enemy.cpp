@@ -14,7 +14,7 @@ extern info *i;
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
 
-    setPixmap(QPixmap(":/new/prefix1/chicken2.png"));
+    setPixmap(QPixmap(":/new/prefix1/chicken.png").scaled(100,85));
     //chicken.scaled(100,100);
 
 
