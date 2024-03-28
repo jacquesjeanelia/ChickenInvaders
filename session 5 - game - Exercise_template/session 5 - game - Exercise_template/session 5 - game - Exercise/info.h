@@ -15,6 +15,7 @@
 #include "health.h"
 #include "text.h"
 #include "users.h"
+#include <QMediaPlayer>
 
 
 class info:public QGraphicsView

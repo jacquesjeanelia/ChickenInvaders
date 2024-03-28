@@ -2,6 +2,8 @@
 #include "QFont"
 #include "main.cpp"
 #include "users.h"
+#include "gameover.h"
+
 
 
 Health::Health(QGraphicsItem *parent):QGraphicsTextItem(parent){
@@ -15,4 +17,5 @@ void Health::decrease(){
     setPlainText  (QString ("Health: ") + QString::number(health));
 }
 
+int Health::getHealth(){return health;}
 

@@ -6,6 +6,9 @@
         <file>background.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>import.qml</file>
+        <file>over.png</file>
+        <file>bullet.mp3</file>
+        <file>Chicken invaders 1 (soundtrack) (320 kbps).mp3</file>
+        <file>chicken.mp3</file>
     </qresource>
 </RCC>

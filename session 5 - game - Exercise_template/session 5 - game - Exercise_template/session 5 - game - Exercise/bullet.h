@@ -6,6 +6,7 @@
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
 #include <score.h>
+#include <QMediaPlayer>
 class Bullet: public QObject, public QGraphicsPixmapItem
 {
 
@@ -14,6 +15,8 @@ public:
     Bullet();
 public slots:
     void move();
+private:
+
 };
 
 #endif // BULLET_H

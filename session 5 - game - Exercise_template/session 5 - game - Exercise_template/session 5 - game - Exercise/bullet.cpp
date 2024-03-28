@@ -12,8 +12,12 @@
 #include "health.h"
 #include "users.h"
 #include "info.h"
+#include "gameover.h"
+#include <QMediaPlayer>
+
 
 extern info *i;
+extern gameover *o;
 
 Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
 
@@ -26,6 +30,11 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
+
+
+
+
+
 }
 
 
@@ -35,6 +44,7 @@ void Bullet:: move()
 {
         // *******  Getting the colliding items with the Bullet ********
 
+
     QList<QGraphicsItem*>colliding_items = collidingItems();
         for (int x = 0, n = colliding_items.size();x<n;x++)
     {
@@ -43,7 +53,9 @@ void Bullet:: move()
 
                 scene()->removeItem(colliding_items[x]);
                 scene()->removeItem(this);
+
                 delete colliding_items[x];
+
                 i-> score->increase();
                 delete this;
                 return;

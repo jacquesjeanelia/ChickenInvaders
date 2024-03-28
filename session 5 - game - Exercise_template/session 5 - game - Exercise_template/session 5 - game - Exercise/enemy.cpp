@@ -9,8 +9,12 @@
 #include <score.h>
 #include "users.h"
 #include "info.h"
+#include "gameover.h"
+#include <QMediaPlayer>
 
 extern info *i;
+extern gameover *o;
+
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
 
@@ -40,5 +44,10 @@ void Enemy:: move()
         scene()->removeItem(this);
         delete this;
         i->health->decrease();
+        if (i->health->getHealth() <1)
+        {
+            o->show();
+            i->hide();
+        }
     }
 }
