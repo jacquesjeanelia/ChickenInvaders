@@ -5,5 +5,7 @@
         <file>chicken.png</file>
         <file>background.png</file>
     </qresource>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>import.qml</file>
+    </qresource>
 </RCC>
