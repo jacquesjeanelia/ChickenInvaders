@@ -5,11 +5,16 @@
 #include <stdlib.h> // rand() -> to generate really large integer
 #include <QTimer>
 #include <QDebug>
+#include "health.h"
+#include <score.h>
+#include "users.h"
+#include "info.h"
 
+extern info *i;
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
 
-    setPixmap(QPixmap(":/new/prefix1/chicken2.png"));
+    setPixmap(QPixmap(":/new/prefix1/chicken.png").scaled(100,85));
     //chicken.scaled(100,100);
 
 
@@ -31,7 +36,9 @@ void Enemy:: move()
     setPos(x(),y()+5);
         if(y()+100>800)
     {
+
         scene()->removeItem(this);
-            delete this;
+        delete this;
+        i->health->decrease();
     }
 }
