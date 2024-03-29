@@ -14,7 +14,7 @@
 #include "info.h"
 #include "gameover.h"
 #include <QMediaPlayer>
-
+#include <QtMultimedia>
 
 extern info *i;
 extern gameover *o;
@@ -30,6 +30,8 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
+
+
 
 
 
@@ -55,7 +57,13 @@ void Bullet:: move()
                 scene()->removeItem(this);
 
                 delete colliding_items[x];
+                QMediaPlayer *chickenplayer = new QMediaPlayer;
+                QAudioOutput *chickenoutput = new QAudioOutput;
 
+                chickenplayer->setAudioOutput(chickenoutput);
+                chickenplayer->setSource(QUrl("qrc:/chicken.mp3"));
+                chickenoutput->setVolume(40);
+                chickenplayer->play();
                 i-> score->increase();
                 delete this;
                 return;

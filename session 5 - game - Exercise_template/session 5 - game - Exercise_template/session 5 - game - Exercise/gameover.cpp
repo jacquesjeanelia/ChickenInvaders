@@ -1,4 +1,6 @@
 #include "gameover.h"
+#include <QMediaPlayer>
+#include <QtMultimedia>
 
 gameover::gameover() {
 
@@ -12,6 +14,15 @@ gameover::gameover() {
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    music = new QMediaPlayer;
+    QAudioOutput *output = new QAudioOutput;
+
+    music->setAudioOutput(output);
+    music->setSource(QUrl("qrc:/wah-wah-sad-trombone-6347.mp3"));
+    output->setVolume(30);
+
+
     this->setScene(scene);
+
 
 }

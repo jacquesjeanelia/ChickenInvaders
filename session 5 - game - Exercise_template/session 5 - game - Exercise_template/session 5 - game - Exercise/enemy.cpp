@@ -47,7 +47,9 @@ void Enemy:: move()
         if (i->health->getHealth() <1)
         {
             o->show();
+            o->music->play();
             i->hide();
+            i->music->stop();
         }
     }
 }

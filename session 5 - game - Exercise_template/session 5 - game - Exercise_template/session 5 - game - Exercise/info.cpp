@@ -15,6 +15,7 @@
 #include "text.h"
 #include "users.h"
 #include <QMediaPlayer>
+#include<QtMultimedia>
 
 
 info::info() {
@@ -61,7 +62,14 @@ info::info() {
     QObject::connect(time, SIGNAL(timeout()),player,SLOT(createEnemy()));
     time->start(2000);
 
+    music = new QMediaPlayer;
+    QAudioOutput *output = new QAudioOutput;
 
+    music->setAudioOutput(output);
+    music->setSource(QUrl("qrc:/Chicken invaders 1 (soundtrack) (320 kbps).mp3"));
+    output->setVolume(30);
+
+    music->play();
     // *******   Assign scene to the view   ***************
 
     this->setScene(scene);

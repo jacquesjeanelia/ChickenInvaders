@@ -24,6 +24,7 @@ public:
     info();
     Score * score;
     Health *health;
+    QMediaPlayer *music;
 };
 
 #endif // INFO_H

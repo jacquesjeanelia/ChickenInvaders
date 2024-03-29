@@ -7,12 +7,24 @@
 #include <QDebug>
 #include "enemy.h"
 #include "users.h"
+#include <QMediaPlayer>
+#include <QtMultimedia>
+
 Player::Player() {
 
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
+    QMediaPlayer *bulletplayer = new QMediaPlayer;
+    QAudioOutput *bulletoutput = new QAudioOutput;
+
+    bulletplayer->setAudioOutput(bulletoutput);
+    bulletplayer->setSource(QUrl("qrc:/bullet.mp3"));
+    bulletoutput->setVolume(40);
+
+
+
         // *******  Event Handling for the Player ********
     if(event->key()== Qt::Key_Left)
     {
@@ -31,6 +43,15 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet();
         bullet->setPos(x()+30,y());
         scene()->addItem(bullet);
+
+        if(bulletplayer->playbackState() == QMediaPlayer::PlayingState)
+        {
+            bulletplayer->play();
+        }
+        else
+        {
+            bulletplayer->play();
+        }
 
     }
 
