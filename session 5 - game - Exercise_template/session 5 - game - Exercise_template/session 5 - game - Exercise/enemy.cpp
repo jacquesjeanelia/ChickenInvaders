@@ -47,7 +47,13 @@ void Enemy:: move()
         if (i->health->getHealth() <1)
         {
             o->show();
+            o->music->play();
+            if(o->music->playbackState() == QMediaPlayer::PlaybackState())
+            {
+                o->music->stop();
+            }
             i->hide();
+            i->music->stop();
         }
     }
 }

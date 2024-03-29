@@ -21,6 +21,7 @@ class gameover: public QGraphicsView
 {
 public:
     gameover();
+    QMediaPlayer *music;
 };
 
 #endif // GAMEOVER_H

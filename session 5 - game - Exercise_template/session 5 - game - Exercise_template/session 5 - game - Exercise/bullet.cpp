@@ -35,6 +35,8 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem(){
 
 
 
+
+
 }
 
 
@@ -55,7 +57,13 @@ void Bullet:: move()
                 scene()->removeItem(this);
 
                 delete colliding_items[x];
+                QMediaPlayer *chickenplayer = new QMediaPlayer;
+                QAudioOutput *chickenoutput = new QAudioOutput;
 
+                chickenplayer->setAudioOutput(chickenoutput);
+                chickenplayer->setSource(QUrl("qrc:/chicken.mp3"));
+                chickenoutput->setVolume(40);
+                chickenplayer->play();
                 i-> score->increase();
                 delete this;
                 return;
