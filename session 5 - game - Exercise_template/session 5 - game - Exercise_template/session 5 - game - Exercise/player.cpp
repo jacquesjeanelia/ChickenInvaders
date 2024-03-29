@@ -7,6 +7,9 @@
 #include <QDebug>
 #include "enemy.h"
 #include "users.h"
+#include <QMediaPlayer>
+#include <QtMultimedia>
+
 Player::Player() {
 
 }

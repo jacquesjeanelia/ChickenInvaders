@@ -14,7 +14,7 @@
 #include "info.h"
 #include "gameover.h"
 #include <QMediaPlayer>
-
+#include <QtMultimedia>
 
 extern info *i;
 extern gameover *o;

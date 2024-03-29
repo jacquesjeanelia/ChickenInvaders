@@ -1,4 +1,6 @@
 #include "gameover.h"
+#include <QMediaPlayer>
+#include <QtMultimedia>
 
 gameover::gameover() {
 
